@@ -1,0 +1,12 @@
+
+.my-books-page {
+    padding: 20px;
+    background-color: #f0f0f0;
+  }
+  
+  .my-books-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  

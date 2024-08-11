@@ -1,0 +1,58 @@
+/* ProfileDropdown.css */
+
+.profile-dropdown {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff; /* Dark blue background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    position: absolute; /* Positioning for overlapping effect */
+    top: 50px; /* Adjust as necessary */
+    right: 0;
+    z-index: 1000; /* Ensure it overlaps other content */
+    overflow: hidden;
+  }
+  
+  .profile-dropdown li {
+    padding: 15px 20px;
+    cursor: pointer;
+    color: #000000; 
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s;
+  }
+  
+  .profile-dropdown li:hover {
+    background-color: #ed6fbf; /* Lighter blue on hover */
+  }
+  
+  .profile-dropdown li::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  .profile-dropdown li:nth-child(1)::before {
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEppovM_PS6tID_BOx6b2dNX11lsnf4zc0B1ps2D1TJaES4NXyNcSAaS443MnDgy4pEoQ&usqp=CAU'); /* Path to profile icon */
+  }
+  
+  .profile-dropdown li:nth-child(2)::before {
+    background-image: url('https://cdn1.iconfinder.com/data/icons/heroicons-ui/24/logout-512.png'); /* Path to logout icon */
+  }
+  
+  .profile-section {
+    position: relative;
+  }
+  
+  .profile-icon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+  

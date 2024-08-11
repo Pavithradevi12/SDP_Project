@@ -1,0 +1,192 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.admin-dashboard {
+    display: flex;
+    overflow: hidden;
+    margin-top: 50px; 
+}
+
+.main-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #333;
+    color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+.menu-icon {
+    cursor: pointer;
+    margin-right: 20px;
+    font-size: 1.5rem;
+}
+
+.main-header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.main-header .header-right {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.main-header .header-right select,
+.main-header .header-right input,
+.main-header .header-right .fas {
+    margin-right: 10px;
+    padding: 5px;
+    font-size: 1rem;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 50px;
+    left: -250px;
+    width: 250px;
+    height: calc(100% - 50px);
+    background: #f4f4f4;
+    transition: left 0.3s;
+    z-index: 999;
+    overflow-y: auto;
+}
+
+.sidebar.open {
+    left: 0;
+}
+
+.sidebar-header {
+    padding: 20px;
+    background: #007bff;
+    color: white;
+    text-align: center;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav ul li {
+    padding: 15px;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-nav ul li i {
+    margin-right: 10px;
+}
+
+.sidebar-nav ul li.active {
+    background: #007bff;
+    color: white;
+}
+
+.sidebar-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    background: #f4f4f4;
+}
+
+.sidebar-footer .user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar-footer .user-info p {
+    margin: 0;
+}
+
+.user-dropdown {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1001;
+    min-width: 150px;
+}
+
+.user-dropdown .user-info {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.user-dropdown .user-info p {
+    margin: 0;
+    font-weight: bold;
+}
+
+.user-dropdown .logout-button {
+    width: 100%;
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 0 0 5px 5px;
+    text-align: center;
+}
+
+.main-content {
+    margin-top: 50px;
+    margin-left: 250px;
+    padding: 20px;
+    transition: margin-left 0.3s;
+}
+
+.sidebar.open + .main-content {
+    margin-left: 250px;
+}
+
+.main-content .stats-section {
+    display: flex;
+    gap: 20px;
+}
+
+.main-content .stat-card {
+    flex: 1;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    color: black; 
+    font-size: 1.2rem; 
+}
+
+.stat-card p {
+    font-size: 2rem;
+    margin: 10px 0;
+}
+
+.pending-orders {
+    background-color: #ffc107;
+    color: #fff;
+}
+
+.active-orders {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.delivered-orders {
+    background-color: #28a745;
+    color: #fff;
+}

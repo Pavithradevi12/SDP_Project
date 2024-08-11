@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Roboto:wght@400;700&display=swap');
+
+body {
+    background-color: #f0f2f5;
+    font-family: 'Roboto', sans-serif;
+}
+
+.boom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.p-profile-container {
+    width: 80%;
+    max-width: 900px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-top: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.p-profile-container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.p-profile-card {
+    display: flex;
+    flex-direction: row;
+    background: linear-gradient(135deg, #ffffff, #dc77e3);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.p-profile-card:hover {
+    transform: scale(1.02);
+}
+
+.p-profile-left {
+    flex: 1;
+    background: linear-gradient(135deg, #dc77e3, #ff8f8f);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    transition: background 0.3s ease;
+}
+
+.p-profile-left:hover {
+    background: linear-gradient(135deg, #ff8f8f, #dc77e3);
+}
+
+.p-profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid white;
+    object-fit: cover;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.p-profile-image:hover {
+    transform: rotate(360deg);
+}
+
+.edit-info-text {
+    font-size: 1.2em;
+    font-weight: bold;
+    font-family: 'Merriweather', serif;
+    text-transform: uppercase;
+    margin-top: 80px;
+}
+
+.p-profile-right {
+    flex: 2;
+    padding: 30px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.p-profile-header {
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    transition: border-color 0.3s ease;
+}
+
+.p-profile-header:hover {
+    border-color: #6e8efb;
+}
+
+.p-profile-header h2 {
+    margin: 0;
+    font-size: 2em;
+    color: #333;
+    font-family: 'Merriweather', serif;
+}
+
+.p-profile-header h3 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #777;
+    display: flex;
+    align-items: center;
+}
+
+.edit-icon {
+    margin-left: 10px;
+    cursor: pointer;
+    color: #fb6ed5;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.edit-icon:hover {
+    color: #a777e3;
+    transform: scale(1.2);
+}
+
+.p-profile-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-item {
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.detail-item:hover {
+    transform: translateX(10px);
+}
+
+.detail-item strong {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-family: 'Merriweather', serif;
+}
+
+.detail-item input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+}
+
+.detail-item input:focus {
+    border-color: #6e8efb;
+    box-shadow: 0 0 10px rgba(110, 142, 251, 0.5);
+}
+
+button {
+    background-color: #fb6ee3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+}
+
+button:hover {
+    background-color: #dc77e3;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(110, 142, 251, 0.3);
+}
+
+span[onClick] {
+    cursor: pointer;
+    color: #fb6ef6;
+    transition: color 0.3s ease;
+}
+
+span[onClick]:hover {
+    color: #e3779b;
+}
+
+.p-profile-right .detail-item div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

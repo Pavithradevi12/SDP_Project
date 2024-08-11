@@ -1,0 +1,191 @@
+.home {
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.recommended {
+  margin-bottom: 40px;
+}
+
+.book-card {
+  position: relative;
+  text-align: center;
+  padding: 10px;
+  transition: transform 0.3s;
+}
+
+.book-card img {
+  width: 100px;
+  height: 150px;
+  transition: transform 0.3s;
+  padding: 50px;
+}
+
+.book-card p {
+  margin: 5px 0;
+  font-size: 14px;
+  text-decoration: none; /* Ensure no underline for paragraphs */
+}
+
+.book-card p.book-title {
+  color: black;
+}
+
+.book-card p.book-author {
+  color: rgb(213, 63, 188);
+}
+
+.book-card p.book-status {
+  color: red; /* Red color for Premium */
+}
+
+.book-card p.book-status.free {
+  color: green; /* Green color for Free */
+}
+
+.book-card:hover {
+  /* transform: scale(1.05); */
+  border-radius: 10px;
+}
+
+.book-card:hover img {
+  background-color: rgba(242, 120, 193, 0.449);
+}
+
+.categories {
+  margin-top: 20px;
+}
+
+.genre-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.genre-card {
+  position: relative;
+  overflow: hidden;
+  width: calc(25% - 10px);
+  height: 150px;
+  cursor: pointer;
+}
+
+.genre-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.genre-card:hover img {
+  transform: scale(1.1);
+}
+
+.genre-name {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  font-size: 18px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* Ensure links do not have underline */
+.book-card a {
+  text-decoration: none;
+}
+
+.book-card a p {
+  text-decoration: none;
+}
+
+
+/* CSS for YouTube Educators section */
+.youtube-educators {
+  margin-top: 40px;
+}
+
+.educator-cards {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.educator-card {
+  text-align: center;
+  flex: 1;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.educator-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.educator-name {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.shop-now-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.shop-now-button:hover {
+  background-color: #0056b3;
+}
+.school-text-books {
+  padding: 20px;
+  background-color: #E8F6F7;
+}
+
+.school-text-books h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.school-text-books-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.school-text-book-card {
+  width: 150px;
+  text-align: center;
+}
+
+.school-text-book-card img {
+  width: 100%;
+  height: auto;
+}
+
+.school-text-book-name {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.view-all {
+  align-self: center;
+}
+
+.view-all a {
+  font-size: 16px;
+  color: #E63946;
+  text-decoration: none;
+}

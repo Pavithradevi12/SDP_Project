@@ -1,0 +1,13 @@
+/* src/components/Rating.css */
+.rating {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px; /* Adjust margin */
+  }
+  
+  .star {
+    color: #ffd700;
+    margin-right: 3px; /* Adjust margin between stars */
+    font-size: 0.7em; /* Adjust star size */
+  }
+  

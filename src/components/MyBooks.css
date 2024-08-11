@@ -1,0 +1,33 @@
+.my-books {
+    padding: 16px;
+  }
+  
+  .wishlist-item {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px;
+  }
+  
+  .book-image {
+    width: 100px;
+    height: auto;
+    margin-right: 16px;
+  }
+  
+  .remove-button {
+    margin-top: 8px;
+    padding: 8px 16px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .remove-button:hover {
+    background-color: #c82333;
+  }
+  
