@@ -76,17 +76,17 @@ const BookManagement = () => {
   return (
     <div>
       <AdminNavbar />
-      <div className="book-header-container">
+      <div className="ad-book-header-container">
         <h1>Manage Books</h1>
-        <button onClick={() => setShowAddModal(true)} className="book-open-modal-button">Add Book</button>
+        <button onClick={() => setShowAddModal(true)} className="ad-book-open-modal-button">Add Book</button>
       </div>
 
       {/* Add Book Modal */}
       {showAddModal && (
-        <div className="book-modal-overlay" onClick={() => setShowAddModal(false)}>
-          <div className="book-modal-content" onClick={e => e.stopPropagation()}>
+        <div className="ad-book-modal-overlay" onClick={() => setShowAddModal(false)}>
+          <div className="ad-book-modal-content" onClick={e => e.stopPropagation()}>
             <h2>Add Book</h2>
-            <div className="book-modal-grid">
+            <div className="ad-book-modal-grid">
               <input
                 type="text"
                 placeholder="Title"
@@ -128,18 +128,18 @@ const BookManagement = () => {
                 onChange={(e) => setNewBook({ ...newBook, rating: e.target.value })}
               />
             </div>
-            <button onClick={addBook} className="book-action-button">Add Book</button>
-            <button onClick={() => setShowAddModal(false)} className="book-close-modal-button">Close</button>
+            <button onClick={addBook} className="ad-book-action-button">Add Book</button>
+            <button onClick={() => setShowAddModal(false)} className="ad-book-close-modal-button">Close</button>
           </div>
         </div>
       )}
 
       {/* Edit Book Modal */}
       {showEditModal && editingBook && (
-        <div className="book-modal-overlay" onClick={() => setShowEditModal(false)}>
-          <div className="book-modal-content" onClick={e => e.stopPropagation()}>
+        <div className="ad-book-modal-overlay" onClick={() => setShowEditModal(false)}>
+          <div className="ad-book-modal-content" onClick={e => e.stopPropagation()}>
             <h2>Edit Book</h2>
-            <div className="book-modal-grid">
+            <div className="ad-book-modal-grid">
               <input
                 type="text"
                 placeholder="Title"
@@ -181,13 +181,13 @@ const BookManagement = () => {
                 onChange={(e) => setEditForm({ ...editForm, rating: e.target.value })}
               />
             </div>
-            <button onClick={updateBook} className="book-action-button">Update Book</button>
-            <button onClick={() => setShowEditModal(false)} className="book-close-modal-button">Close</button>
+            <button onClick={updateBook} className="ad-book-action-button">Update Book</button>
+            <button onClick={() => setShowEditModal(false)} className="ad-book-close-modal-button">Close</button>
           </div>
         </div>
       )}
 
-      <table className="book-table">
+      <table className="ad-book-table">
         <thead>
           <tr>
             <th>Id</th>
@@ -208,7 +208,7 @@ const BookManagement = () => {
               <td>{book.title}</td>
               <td>{book.author}</td>
               <td>{book.pdf && <a href={`data:application/pdf;base64,${book.pdf}`} download={`${book.title}.pdf`}>Download PDF</a>}</td>
-              <td>{book.img && <img src={`data:image/png;base64,${book.img}`} alt={book.title} className="book-img-preview" />}</td>
+              <td>{book.img && <img src={`data:image/png;base64,${book.img}`} alt={book.title} className="ad-book-img-preview" />}</td>
               <td>{book.categories}</td>
               <td>{book.membership}</td>
               <td>{book.rating}</td>
@@ -227,10 +227,10 @@ const BookManagement = () => {
                     });
                     setShowEditModal(true);
                   }}
-                  className="book-action-button">
+                  className="ad-book-action-button">
                   Edit
                 </button>
-                <button onClick={() => deleteBook(book.id)} className="book-action-button">Delete</button>
+                <button onClick={() => deleteBook(book.id)} className="ad-book-action-button">Delete</button>
               </td>
             </tr>
           ))}

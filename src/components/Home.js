@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Slider from 'react-slick';
 import './Home.css';
@@ -43,6 +43,9 @@ import educator3 from '../images/educator3.jpg';
 const Home = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [userName, setUserName] = useState('');
+  const [modalVisible, setModalVisible] = useState(false);
+  const [selectedGenreInfo, setSelectedGenreInfo] = useState('');
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -78,7 +81,6 @@ const Home = () => {
     navigate('/login');
   };
 
-
   const settings = {
     dots: true,
     infinite: true,
@@ -94,33 +96,40 @@ const Home = () => {
     { id: 3, title: <b>'Vampires and Villains'</b>, author: <b>'Dee Osah'</b>, imgSrc: book3, pdfSrc: pdf3, isFree: false },
     { id: 4, title: <b>'The Ghost Squad'</b>, author: <b>'Ashley Capes'</b>, imgSrc: book4, pdfSrc: pdf4, isFree: true },
     { id: 5, title: <b>'The OverThinking in Relationship'</b>, author: <b>'Traci Lovelot'</b>, imgSrc: book5, pdfSrc: pdf5, isFree: false },
-    { id: 6, title: <b>'The Girl from  San-Daniele'</b>, author: <b>'Elizabeth Pantley'</b>, imgSrc: book6, pdfSrc: pdf6, isFree: true },
+    { id: 6, title: <b>'The Girl from San-Daniele'</b>, author: <b>'Elizabeth Pantley'</b>, imgSrc: book6, pdfSrc: pdf6, isFree: true },
   ];
 
   const genres = [
-    { name: 'ROMANCE', imgSrc: genre1 },
-    { name: 'ACTION & ADVENTURE', imgSrc: genre2 },
-    { name: 'MYSTERY & THRILLER', imgSrc: genre3 },
-    { name: 'BIOGRAPHIES & HISTORY', imgSrc: genre4 },
-    { name: 'CHILDREN\'S', imgSrc: genre5 },
-    { name: 'YOUNG ADULT', imgSrc: genre6 },
-    { name: 'FANTASY', imgSrc: genre7 },
-    { name: 'HISTORICAL FICTION', imgSrc: genre8 },
-    { name: 'HORROR', imgSrc: genre9 },
-    { name: 'LITERARY FICTION', imgSrc: genre10 },
-    { name: 'NON-FICTION', imgSrc: genre11 },
-    { name: 'SCIENCE FICTION', imgSrc: genre12 }
+    { name: 'ROMANCE', imgSrc: genre1, info: 'Romantic tales full of love, passion, and relationships.' },
+    { name: 'ACTION & ADVENTURE', imgSrc: genre2, info: 'Exciting adventures with daring heroes and thrilling action.' },
+    { name: 'MYSTERY & THRILLER', imgSrc: genre3, info: 'Suspenseful stories filled with twists, turns, and mysteries.' },
+    { name: 'BIOGRAPHIES & HISTORY', imgSrc: genre4, info: 'Inspiring biographies and fascinating historical events.' },
+    { name: 'CHILDREN\'S', imgSrc: genre5, info: 'Fun and educational stories for young readers.' },
+    { name: 'YOUNG ADULT', imgSrc: genre6, info: 'Stories that resonate with the younger generation.' },
+    { name: 'FANTASY', imgSrc: genre7, info: 'Magical realms, mythical creatures, and epic quests.' },
+    { name: 'HISTORICAL FICTION', imgSrc: genre8, info: 'Fiction set in the past with real historical events.' },
+    { name: 'HORROR', imgSrc: genre9, info: 'Spine-chilling tales designed to scare and thrill.' },
+    { name: 'LITERARY FICTION', imgSrc: genre10, info: 'Deep, thought-provoking stories about the human experience.' },
+    { name: 'NON-FICTION', imgSrc: genre11, info: 'Informative and factual content covering various topics.' },
+    { name: 'SCIENCE FICTION', imgSrc: genre12, info: 'Futuristic tales of technology, space, and the unknown.' }
   ];
+
+  // Handle genre click to show info in a modal
+  const handleGenreInfoClick = (genreInfo) => {
+    setSelectedGenreInfo(genreInfo);
+    setModalVisible(true);
+  };
+
+  const closeModal = () => {
+    setModalVisible(false);
+    setSelectedGenreInfo('');
+  };
 
   const youtubeEducators = [
     { name: 'Aditya Ranjan (Rankers Gurukul)', imgSrc: educator1 },
     { name: 'Satyam Gupta (MD Classes)', imgSrc: educator2 },
     { name: 'Abhinay Maths', imgSrc: educator3 },
   ];
-
-  const handleGenreClick = (genreName) => {
-    navigate(`/explorepage?=${encodeURIComponent(genreName)}`); 
-  };
 
   return (
     <div>
@@ -130,7 +139,7 @@ const Home = () => {
         <section className="recommended">
           <h2>Recommended</h2>
           <Slider {...settings}>
-            {books.map(book => (
+            {books.map((book) => (
               <div className="book-card" key={book.id}>
                 <a href={book.pdfSrc} target="_blank" rel="noopener noreferrer">
                   <img src={book.imgSrc} alt={book.title} />
@@ -146,7 +155,7 @@ const Home = () => {
           <h2>Browse Genres</h2>
           <div className="genre-cards">
             {genres.map((genre, index) => (
-              <div className="genre-card" key={index} onClick={() => handleGenreClick(genre.name)}>
+              <div className="genre-card" key={index} onClick={() => handleGenreInfoClick(genre.info)}>
                 <img src={genre.imgSrc} alt={genre.name} />
                 <div className="genre-name">{genre.name}</div>
               </div>
@@ -165,8 +174,18 @@ const Home = () => {
             ))}
           </div>
         </section>
-        <Footer/>
+        <Footer />
       </div>
+
+      {/* Modal for displaying genre information */}
+      {modalVisible && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <div className="modal-content">
+            <p>{selectedGenreInfo}</p>
+            <button onClick={closeModal}>Close</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
